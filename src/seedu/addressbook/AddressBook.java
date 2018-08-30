@@ -115,6 +115,11 @@ public class AddressBook {
     private static final String COMMAND_LIST_DESC = "Displays all persons as a list with index numbers.";
     private static final String COMMAND_LIST_EXAMPLE = COMMAND_LIST_WORD;
 
+    //added function===============================================================================
+    private static final String COMMAND_COUNT_WORD = "count";
+    private static final String COMMAND_COUNT_DESC = "Count total number of persons in address book.";
+    private static final String COMMAND_COUNT_EXAMPLE = COMMAND_COUNT_WORD;
+
     private static final String COMMAND_DELETE_WORD = "delete";
     private static final String COMMAND_DELETE_DESC = "Deletes a person identified by the index number used in "
                                                     + "the last find/list call.";
@@ -375,6 +380,8 @@ public class AddressBook {
             return executeFindPersons(commandArgs);
         case COMMAND_LIST_WORD:
             return executeListAllPersonsInAddressBook();
+        case COMMAND_COUNT_WORD:
+            executeCountTotalPersonInAddressBook();
         case COMMAND_DELETE_WORD:
             return executeDeletePerson(commandArgs);
         case COMMAND_CLEAR_WORD:
@@ -577,6 +584,17 @@ public class AddressBook {
         ArrayList<String[]> toBeDisplayed = getAllPersonsInAddressBook();
         showToUser(toBeDisplayed);
         return getMessageForPersonsDisplayedSummary(toBeDisplayed);
+    }
+
+    /**
+     * ================================added function============================
+     * Count the total number of person in the address book and display result to the user
+     *
+     */
+    private static void executeCountTotalPersonInAddressBook() {
+        ArrayList<String[]> personsInAddressBook = getAllPersonsInAddressBook();
+        int size = personsInAddressBook.size();
+        System.out.println("The total number of persons in address book is: " + size);
     }
 
     /**
@@ -1122,6 +1140,13 @@ public class AddressBook {
     private static String getUsageInfoForViewCommand() {
         return String.format(MESSAGE_COMMAND_HELP, COMMAND_LIST_WORD, COMMAND_LIST_DESC) + LS
                 + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_LIST_EXAMPLE) + LS;
+    }
+
+    //added function message===================================================================
+    /** Returns the string for showing 'view' command usage instruction */
+    private static String getUsageInfoForCountCommand() {
+        return String.format(MESSAGE_COMMAND_HELP, COMMAND_COUNT_WORD, COMMAND_COUNT_DESC) + LS
+                + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_COUNT_EXAMPLE) + LS;
     }
 
     /** Returns string for showing 'help' command usage instruction */
