@@ -1,5 +1,5 @@
 package seedu.addressbook;
-// test
+
 /*
  * NOTE : =============================================================
  * This class is written in a procedural fashion (i.e. not Object-Oriented)
