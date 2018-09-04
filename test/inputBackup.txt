@@ -98,7 +98,6 @@
   # clears all
   clear
   list
-  list
 
 ##########################################################
 # test exit command

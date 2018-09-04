@@ -381,7 +381,8 @@ public class AddressBook {
         case COMMAND_LIST_WORD:
             return executeListAllPersonsInAddressBook();
         case COMMAND_COUNT_WORD:
-            executeCountTotalPersonInAddressBook();
+            //need return something
+            return executeCountTotalPersonInAddressBook();
         case COMMAND_DELETE_WORD:
             return executeDeletePerson(commandArgs);
         case COMMAND_CLEAR_WORD:
@@ -591,10 +592,11 @@ public class AddressBook {
      * Count the total number of person in the address book and display result to the user
      *
      */
-    private static void executeCountTotalPersonInAddressBook() {
+    private static String executeCountTotalPersonInAddressBook() {
         ArrayList<String[]> personsInAddressBook = getAllPersonsInAddressBook();
-        int size = personsInAddressBook.size();
-        System.out.println("The total number of persons in address book is: " + size);
+        //int size = personsInAddressBook.size();
+        //System.out.println("The total number of persons in address book is: " + size);
+        return getMessageForPersonsDisplayedSummary(personsInAddressBook);
     }
 
     /**

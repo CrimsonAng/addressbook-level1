@@ -275,6 +275,9 @@
 || 
 || 0 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  count]
+|| 0 persons found!
+|| ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book... Good bye!
 || ===================================================
