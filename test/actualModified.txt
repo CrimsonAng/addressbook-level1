@@ -275,6 +275,10 @@
 || 
 || 0 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  list]
+|| 
+|| 0 persons found!
+|| ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book... Good bye!
 || ===================================================
